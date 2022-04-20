@@ -18,12 +18,12 @@
     <div class = "container">
 <?php
 //page header
-   // require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
 
-    //$pageTitle = "SIGN UP";
-    //$logo = "./images/logo1.jfif";
-    //pageHeaderSession($pageTitle, $logo);
-require_once 'connection.php';
+    $pageTitle = "SIGN UP";
+    $logo = "./img/comiclogo.png";
+    pageHeader($pageTitle, $logo);
+require_once './phpfunctions/connection.php';
 $conn = connect_db();
      //Each value to be inserted
      $username = $_POST["uname"];
