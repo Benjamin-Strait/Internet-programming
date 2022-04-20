@@ -25,11 +25,11 @@
     <div class = "container">
     <?php
     //page header
-    //require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
 
-    /*$pageTitle = "STORE";
-    $logo = "./images/logo1.jfif";
-    pageHeaderSession($pageTitle, $logo);*/
+    $pageTitle = "STORE";
+    $logo = "./images/comiclogo.png";
+    pageHeader($pageTitle, $logo);
 
     require_once 'connection.php';
     $conn = connect_db();
