@@ -31,7 +31,7 @@
     $logo = "./images/comiclogo.png";
     pageHeader($pageTitle, $logo);
 
-    require_once 'connection.php';
+    require_once './phpfunctions/connection.php';
     $conn = connect_db();
 
     //selects everything from the menu table
