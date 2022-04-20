@@ -14,14 +14,14 @@
   </head>
   <body>
     <div class = "container">
-    <?php/*
+    <?php
     //page header
-    require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
 
     $pageTitle = "SIGN UP";
-    $logo = "./images/logo1.jfif";
-    pageHeaderSession($pageTitle, $logo);
-    */?>
+    $logo = "./img/comiclogo.png";
+    pageHeader($pageTitle, $logo);
+    ?>
     
   <!--Creates a form that asks for the user's name, email and password-->
 
