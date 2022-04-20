@@ -25,15 +25,15 @@
         <div class="dropdown-content" id="Dropdown">
           <a href="#">Home</a>
           <a href="#">Forum</a>
-          <a href="#">Store</a>
-          <a href="#">Cart <i class="fa fa-shopping-cart"></i></a>
+          <a href="../store.php">Store</a>
+          <a href="../cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
         
     EOT;
     if(!isset($_SESSION['name']))
     {
       echo<<<EOT
-      <a href="#">Signup</a>
-      <a href="#">Login</a>
+      <a href="../insert.php">Signup</a>
+      <a href="../login.php">Login</a>
       </div>
       </div> 
       </div>
