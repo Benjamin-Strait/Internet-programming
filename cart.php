@@ -18,11 +18,11 @@ holds all of the information to be shown in the shopping cart
     <div class = "container">
     <?php
     //page header
-    /*require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
 
     $pageTitle = "CART";
-    $logo = "./images/logo1.jfif";
-    pageHeaderSession($pageTitle, $logo);*/
+    $logo = "./img/comiclogo.png";
+    pageHeader($pageTitle, $logo);
     ?>
       
       <div id = "cartinfo">
