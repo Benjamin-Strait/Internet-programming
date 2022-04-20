@@ -15,11 +15,11 @@
     <div class = "container">
     <?php
     //page header
-    /*require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
 
     $pageTitle = "LOGIN";
     $logo = "./images/logo1.jfif";
-    pageHeaderSession($pageTitle, $logo);*/
+    pageHeader($pageTitle, $logo);
     ?>
 
   <!--Creates a form that requires email and password to login-->
