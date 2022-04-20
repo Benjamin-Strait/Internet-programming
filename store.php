@@ -28,7 +28,7 @@
     require_once './phpfunctions/format.php';
 
     $pageTitle = "STORE";
-    $logo = "./images/comiclogo.png";
+    $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
 
     require_once './phpfunctions/connection.php';
