@@ -14,12 +14,12 @@
   <body>
     <div class = "container">
     <?php
-    /*require_once 'pageFormatSession.php';
+    require_once './phpfunctions/format.php';
     //page header
     $pageTitle = "LOGIN";
-    $logo = "./images/logo1.jfif";
+    $logo = "./img/comiclogo.png";
     pageHeaderSession($pageTitle, $logo);
-    */
+    
     
     //get input from the form login
     $email = $_POST["email"];
@@ -28,7 +28,7 @@
     //echo $email. " :".$pwd;
 
     //Searches the database for the user's account
-    require_once "connection.php";
+    require_once "./phpfunctions/connection.php";
     $conn = connect_db();
     $query = "SELECT * FROM users WHERE email = \"$email\" AND password = SHA1(\"$pwd\");";
     $result = $conn->query($query);
