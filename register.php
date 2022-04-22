@@ -13,7 +13,7 @@
     <title>Register</title>
   </head>
   <body>
-    <div class = "container">
+    
     <?php
     //page header
     require_once './phpfunctions/format.php';
@@ -22,7 +22,7 @@
     $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
     ?>
-    
+    <div class = "container">
   <!--Creates a form that asks for the user's name, email and password-->
 
 <form action = "./insert.php" method = "POST" onsubmit = "return validateregister(this)">
