@@ -22,7 +22,7 @@
 </html>
   <body>
 
-    <div class = "container">
+    
     <?php
     //page header
     require_once './phpfunctions/format.php';
@@ -30,7 +30,7 @@
     $pageTitle = "STORE";
     $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
-
+    echo "<div class = \"container\">;
     require_once './phpfunctions/connection.php';
     $conn = connect_db();
 
