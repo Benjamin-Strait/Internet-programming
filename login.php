@@ -12,7 +12,7 @@
     <title>Login</title>
   </head>
   <body>
-    <div class = "container">
+    
     <?php
     //page header
     require_once './phpfunctions/format.php';
@@ -21,7 +21,7 @@
     $logo = "./images/logo1.jfif";
     pageHeader($pageTitle, $logo);
     ?>
-
+<div class = "container">
   <!--Creates a form that requires email and password to login-->
   <form action="./loginHandler.php" method= "POST" validatelogin(this)>
   <div class="form-group">
