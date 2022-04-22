@@ -12,14 +12,14 @@
     <title>Login</title>
   </head>
   <body>
-    <div class = "container">
+    
     <?php
     require_once './phpfunctions/format.php';
     //page header
     $pageTitle = "LOGIN";
     $logo = "./img/comiclogo.png";
     pageHeaderSession($pageTitle, $logo);
-    
+    echo "<div class = \"container\">;
     
     //get input from the form login
     $email = $_POST["email"];
