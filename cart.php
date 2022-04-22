@@ -15,7 +15,7 @@ holds all of the information to be shown in the shopping cart
   </head>
   <body>
 
-    <div class = "container">
+    
     <?php
     //page header
     require_once './phpfunctions/format.php';
@@ -24,7 +24,7 @@ holds all of the information to be shown in the shopping cart
     $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
     ?>
-      
+      <div class = "container">
       <div id = "cartinfo">
 
       <!--buttons for clearing the cart and checking out-->
