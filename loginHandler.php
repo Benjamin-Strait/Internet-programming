@@ -12,14 +12,14 @@
     <title>Login</title>
   </head>
   <body>
-    
+    <div class = "container">
     <?php
     require_once './phpfunctions/format.php';
     //page header
     $pageTitle = "LOGIN";
     $logo = "./img/comiclogo.png";
-    pageHeaderSession($pageTitle, $logo);
-    echo "<div class = \"container\">;
+    pageHeader($pageTitle, $logo);
+    
     
     //get input from the form login
     $email = $_POST["email"];
@@ -42,7 +42,7 @@
       $_SESSION["name"]=$row["name"];
       echo "<h2>Welcome back ! $username</h2>";
       //Redirects the user to the menu page
-      //header('Location: ./menu.php');
+      header('Location: ./store.php');
     }
     else
       echo "<h2 class= \"text-danger\">Login failed! Try again!</h2>";

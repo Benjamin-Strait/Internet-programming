@@ -10,7 +10,7 @@ holds all of the information to be shown in the shopping cart
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/myStyle.css">
+    <link rel="stylesheet" href="./css/formatStyle.css">
     <title>Cart</title>
   </head>
   <body>
@@ -24,19 +24,22 @@ holds all of the information to be shown in the shopping cart
     $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
     ?>
-      <div class = "container">
+    <div class = "container">  
       <div id = "cartinfo">
 
       <!--buttons for clearing the cart and checking out-->
       </div>
       
-      <!--<a href="./checkout.php" style = "background-color: indianred; color: white;padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block;">Check Out</a>
-      <div class = "space"></div>-->
+      <a href="./checkout.php">
+         <div class ="row ">
+        <button type = "button">
+            Checkout
+        </button>
+    </a></a>
+    
       <button type = "button"  onclick= clearcartHTML()>Clear Cart</button>
-            <?php
-//shows the page footer
- //pageFooter();
- ?>
+    </div>
+            
     <!--allows access to cart.js functions-->
     <script type="text/javascript" src = "./js/cart.js"></script>
     <!--displays the contents of the cart-->
@@ -50,5 +53,9 @@ holds all of the information to be shown in the shopping cart
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </div>
+    <?php
+//shows the page footer
+ pageFooter();
+ ?>
   </body>
 </html>

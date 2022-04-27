@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
 
-    <title>Menu</title>
+    <title>Store</title>
   </head>
 <!DOCTYPE html>
 <html>
@@ -30,12 +30,16 @@
     $pageTitle = "STORE";
     $logo = "./img/comiclogo.png";
     pageHeader($pageTitle, $logo);
-    echo "<div class = \"container\">;
+    
+    echo '<br>';
+    
+    echo "<div class = \"container\">";
+
     require_once './phpfunctions/connection.php';
     $conn = connect_db();
 
     //selects everything from the menu table
-    $query = "SELECT * FROM goods";
+    $query = "SELECT * FROM comics";
     $result = $conn->query($query);
     //Ends the program if the entries aren't found
     if(!$result) die("fatal error on query!");
@@ -47,16 +51,19 @@
     {
       echo "<div class= \"col-3 mb-3\">";
       $row = $result->fetch_array(MYSQLI_ASSOC);
-      $img = "./images/" . $row["imgName"];
-      $name = $row["name"];
-      $price = $row["price"];
+      $img = "./img/" . $row["Image"];
+      $title = $row["Title"];
+      $issue = $row["IssueNumber"];
+      $grade = $row["Grade"];
+      $price = "$" . $row["SalesPrice"];
       $comicInfo = implode("|", $row);
       echo "<img src=\"$img\" alt=\"$img\" width=\"200\" height=\"200\">";
-      echo "<div class = \"row\">";
-      echo " <br>" . $price;
+      echo "<br>"."<b>$title</b>" ." (" . "<b>Issue </b>" . "<b>$issue</b>" . ")";
+      echo "<br>" ."Grade: ". $grade;
+      echo " <br>" . "Sales Price: " . $price . "<br>";
       echo "<button type=\"button\" onclick = \"addToCart(this)\" value = \"$comicInfo\">ADD TO CART</button>";
-      echo "</div>";
-      echo "<h2>$name</h2>";
+      
+      
       
       //echo "<br> <a href=\"menu.php\"> More Info</a>";
       echo "</div>";
@@ -66,10 +73,7 @@
     //closes the connection to the database
     $conn -> close();
     ?>
-<?php
-//shows the page footer
- //pageFooter();
- ?>
+
     <script type="text/javascript" src = "./js/cart.js"></script>
     <!-- Optional JavaScript -->
     <!-- Optional JavaScript -->
@@ -78,5 +82,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </div>
+    <?php
+//shows the page footer
+ pageFooter();
+ ?>
   </body>
 </html>

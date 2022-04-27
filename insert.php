@@ -31,7 +31,7 @@ $conn = connect_db();
      $email = $_POST["email"];
      $pwd = $_POST["pwd"];
      //SHA1 encrypts the entered password
-     $sql = "INSERT INTO users(username, password, name, email) VALUES (\"$username\",SHA1(\"$pwd\"),\"$name\",\"$email\")";
+     $sql = "INSERT INTO users(password, name, email, username ) VALUES (SHA1(\"$pwd\"),\"$name\",\"$email\",\"$username\")";
      //Cancels the request if the database refuses to connect
      if ($conn->connect_error) 
      {
@@ -41,7 +41,7 @@ $conn = connect_db();
      if ($conn->query($sql) == TRUE) 
      {
         echo "You have successfully signed up! ";
-        // echo "<a href=\"loginForm.php\">Login Now?</a>";       
+        echo "<a href=\"login.php\">Login Now?</a>";       
      } 
      else 
      {
