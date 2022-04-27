@@ -108,7 +108,7 @@ function validateregister(id)
 	let emailId = document.getElementById("email");
 	let userId = document.getElementById("uname");
 	let pwdId = document.getElementById("pwd");
-	if(validatename(nameId) && validateemail(emailId) && validateuser(userId) && validatepwc(pwdId))
+	if(validatename(nameId) && validateemail(emailId) && validateuser(userId) && validatepwd(pwdId))
 	{
 		return true;
 	}
@@ -120,7 +120,42 @@ function validatelogin(id)
 {
 	let emailId = document.getElementById("email");
 	let pwdId = document.getElementById("pwd");
-	if(validateemail(emailId) && validatepw2(pwdId))
+	if(validateemail(emailId) && validatepwd2(pwdId))
+	{
+		return true;
+	}
+	else
+		return false;
+}
+function validatephone(id)
+{
+	let field = id.value;
+	let good = false;
+	let msg = document.getElementById("phonemsg");
+	if(field == "")
+	{
+		msg.innerHTML = "Phone Number required!";
+		msg.className = "text-danger";
+	}
+	else
+		if(!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(field)))
+		{
+			msg.innerHTML = "Invalid Phone Number!";
+			msg.className = "text-danger";
+		}
+		else
+		{
+			good = true;
+			msg.innerHTML = "";
+		}
+	return good;
+}
+
+function validatecheckout(id)
+{
+	let emailId = document.getElementById("email");
+	let phoneId = document.getElementById("phone");
+	if(validateemail(emailId) && validatephone(phoneId))
 	{
 		return true;
 	}

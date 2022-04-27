@@ -8,7 +8,7 @@ function addToCart(id)
     let value = id.value;
     let comicinfo = value.split("|");
     addtoStorage(comicinfo);
-    alert(comicinfo[1] + " has been added to the cart!");
+    alert(comicinfo[2] + " has been added to the cart!");
 }
 
 
@@ -26,7 +26,7 @@ function addtoStorage(comicinfo)
 {
   //create array and get comic identitfier
   var cart={};
-  var pid=comicinfo[0];
+  var cid=comicinfo[0];
 
   //if not empty, get previous items that are already in the cart
   if((localStorage.getItem("cart")!=null))
@@ -35,13 +35,13 @@ function addtoStorage(comicinfo)
     }
 
   //if there is an item to add, then increase the amount of a type of pizza that is already in the cart
-  if(cart[pid]!=null)
-     cart[pid][5]+=1;
+  if(cart[cid]!=null)
+     cart[cid][5]+=1;
   else
   {
     //if item not previously selected, set amount to one and set cart to contain pizza information
     comicinfo[5]=1;
-    cart[pid]=comicinfo;   
+    cart[cid]=comicinfo;   
   }
 
   //Set the local cache to include the new additions
@@ -77,17 +77,17 @@ function getCartItems()
     for(let item in cart)
     {
       //retrieve necessary information
-      var cName = cart[item][1];
-      var price = cart[item][3];
-      var imgN = cart[item][4];
+      var cName = cart[item][2];
+      var price = cart[item][8];
+      var imgN = cart[item][10];
       var quantity = cart[item][5];
 
       //format and put all items into outputput to be displayed
-      output+= ` <div class="row mt-4"> `;
-      output+= `<div class="col-sm-2"> <img src="images/${imgN}" class="rounded" alt="${imgN}" width="70%" height="70%"></div>`;
-      output+= ` <div class="col-sm-2"> <h3>${cName}</h3></div>`;
-      output+= `<div class="col-sm-1"> <h3>${price}</h3></div>`;
-      output+= `<div class="col-sm-1"> <h3>${quantity}</h3></div>`;
+     output+= ` <div class="row mt-4"> `;
+      output+= `<div class="col-sm-2"> <img src="img/${imgN}" class="rounded" alt="${imgN}" width="70%" height="70%"></div>`;
+      output+= ` <div class="col-sm-2"> <div class = "row"><i>${cName}</i></div>`;
+      output+= `<div class = "row">$${price * quantity}.00</div>`;
+      output+= `<div class = "row"> Amount: ${quantity}</div>`;
       output+= `</div>`;
     }
   }
@@ -111,11 +111,11 @@ function getOrdersForServer()
     var cart = JSON.parse(cartStr);
     for(let item in cart)
     {
-      var pid = cart[item][0]; //get pizza ID
+      var cid = cart[item][9]; //get comic ID
       var quantity = cart[item][5]; //get quantity of item
 
       //place item in associate array with pizza id set with the quantity
-      order[pid] = quantity;
+      order[cid] = quantity;
     }
 
     //Send the order to be handled by checkoutputHandle.php
