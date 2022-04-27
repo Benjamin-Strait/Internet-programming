@@ -9,6 +9,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/formatStyle.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    div.container6 
+		{
+  		height: 7em;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		background-color: #333; 
+  		}
+		div.container6 p 
+		{
+  		margin: 0;
+  		color: white;
+  		text-align: center;
+  		}
+  		div.container6 a
+  		{
+  			text-decoration:  none;
+  			color: #D3D3D3;
+  		}
+</style>
 </head>
 <body>
 
@@ -31,13 +52,19 @@
         Menu
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Home</a>
-        <a class="dropdown-item" href="#">Forum</a>
+        <a class="dropdown-item" href="./index.php">Home</a>
+        <a class="dropdown-item" href="./category.php">Forum</a>
         <a class="dropdown-item" href="./store.php">Store</a>
         <a class="dropdown-item" href="./cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
   
         
     EOT;
+    
+    if(isset($_SESSION['admin']))
+    {
+        echo '<a class="dropdown-item" href="./sales.php">Sales</a>';
+    }
+   
     if(!isset($_SESSION['name']))
     {
       echo<<<EOT
@@ -51,7 +78,7 @@
     else
     {
       echo<<<EOT
-      <a class="dropdown-item" href="./phpfunctions/logout.php">Logout</a>
+      <a class="dropdown-item" href="./logout.php">Logout</a>
       </div>
       </div> 
       </div>
@@ -63,9 +90,18 @@
 
   function pageFooter()
   {
-
+    echo<<<EOT
+    <br>
+    <div class="container6">
+        <p>Strait Up Cool Comics <i class="fa fa-copyright"></i><br>
+        Web Design by Benjamin Strait, <br>Quinten Williams, and Chantelle Chalk<br>
+        <a href="adminLogin.php">Admin Login</a></p>
+    </div>
+    EOT;
   }
 ?>
+
+
 
 <script type="text/javascript" src = "./js/formatJS.js"></script>
 <script>
