@@ -3,7 +3,7 @@ class Topic {
    
 	private $topicTable = 'forum_topics';
 	private $postTable = 'forum_posts';
-	private $userTable = 'login';
+	private $userTable = 'users';
 	private $categoryTable = 'forum_category';
 	private $conn;
 	
